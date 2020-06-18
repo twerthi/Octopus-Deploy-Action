@@ -32,4 +32,4 @@ do
 
 done
 
-echo "Command is: $command"
+echo "Command is: $command "
