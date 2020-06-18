@@ -1,4 +1,5 @@
-#!/bin/sh -l# Set field seperator
+#!/bin/sh -l
+# Set field seperator
 #IFS="="
 
 # Get the arguments that were passed
