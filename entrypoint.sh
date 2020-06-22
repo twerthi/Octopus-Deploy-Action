@@ -1,5 +1,5 @@
 #!/bin/bash
-# Set field seperator 
+# Set field seperator
 IFS="="
 
 # Get the arguments that were passed
