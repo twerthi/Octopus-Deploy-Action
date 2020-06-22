@@ -9,4 +9,4 @@
 #  echo "Variable is $var"  
 #done
 
-echo "You are using bin bash bosh" 
+#echo "You are using bin bash bosh" 
