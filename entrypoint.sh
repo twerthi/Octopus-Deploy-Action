@@ -6,5 +6,5 @@ IFS="="
 for var in "$@"
 do
   echo "Variable is $var"
-done
+done 
 
