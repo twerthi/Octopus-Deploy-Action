@@ -6,6 +6,6 @@ IFS="="
 for var in "$@"
 do
   read -ra argument <<< "$var"
-  echo "Variable is $var" 
+  echo "Variable is $var"  
 done
 
