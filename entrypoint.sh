@@ -7,7 +7,6 @@ for var in "$@"
 do
     # Split the var
     read -a argument <<<"$var"
-    echo "$var"
     # Assign variables
     case "${argument[0]}" in
       "command")
@@ -33,3 +32,5 @@ do
 done
 
 echo "Command is: $command "
+echo "Workdir is $GITHUB_WORKSPACE"
+echo "$PWD"
