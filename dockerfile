@@ -7,6 +7,7 @@ COPY entrypoint.sh /entrypoint.sh
 # Ensure file is executable
 RUN ["chmod", "+x", "/entrypoint.sh"]
 
+# Add bash to container
 RUN apk add --no-cache bash
 
 # Execute the script

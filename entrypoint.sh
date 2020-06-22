@@ -33,4 +33,7 @@ done
 
 echo "Command is: $command "
 echo "Workdir is $GITHUB_WORKSPACE"
-echo "$PWD"
+for entry in "/"
+do
+  echo "It is $entry"
+done
