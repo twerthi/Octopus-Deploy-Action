@@ -1,11 +1,12 @@
 #!/bin/bash
 # Set field seperator
-IFS="="
+#IFS="="
 
 # Get the arguments that were passed
-for var in "$@"
-do
+#for var in "$@"
+#do
   #read -ra argument <<< "$var"
-  echo "Variable is $var"  
-done
+#  echo "Variable is $var"  
+#done
 
+echo "You are using bin bash bosh"
