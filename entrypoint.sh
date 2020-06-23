@@ -67,6 +67,9 @@ case "$command" in
     ;;
   "create-release")
     # Create a release for the specified project
-    /octo/octo create-release --project "$project" --version "$version" --server "$octopusserverurl" --apiKey "$octopusapikey" --space "$spaceName"
+    /octo/octo "create-release --project '$project' --version '$version' --server '$octopusserverurl' --apiKey '$octopusapikey' --space '$spaceName'"
+    ;;
+  "deploy-release")
+    # Deploy a release
     ;;
 esac
