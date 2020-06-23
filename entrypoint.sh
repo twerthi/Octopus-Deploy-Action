@@ -43,13 +43,27 @@ done
 case "$command" in
   "pack")
     # Check to see if packformat is emtpy
-    if [ -z "$packformat"]
+    if [ -z "$packformat" ]
     then
       packformat="Zip"
     fi
     /octo/octo pack --id "$packageid" --format "$packformat" --version "$version" --basePath "$packfolder" --outFolder "$artifactfolder"
     ;;
   "push")
+    # Get file(s) specified
+    packageFiles=$(ls $packageid)
+
+    # Check to see if space was specified
+    if [ -z "$spaceName" ]
+    then
+      spaceName="Default"
+    fi
+
+    # Loop through files
+    for file in "$packageFiles"
+    do
+      /octo/octo push --id "$file" --server "$octopusserverurl" --apiKey "$octopusapikey" --space "$spaceName"
+    done
     ;;
 esac
 
