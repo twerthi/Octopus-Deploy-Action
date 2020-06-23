@@ -51,7 +51,7 @@ case "$command" in
     ;;
   "push")
     # Get file(s) specified
-    packageFiles=$(ls "$artifactfolder/$packageid")
+    #packageFiles=$(ls "$artifactfolder/$packageid")
 
     # Check to see if space was specified
     if [ -z "$spaceName" ]
@@ -60,7 +60,7 @@ case "$command" in
     fi
 
     # Loop through files
-    for file in "$packageFiles"
+    for file in "$artifactfolder/$packageid"
     do
       /octo/octo push --id "$file" --server "$octopusserverurl" --apiKey "$octopusapikey" --space "$spaceName"
     done
