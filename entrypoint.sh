@@ -67,9 +67,17 @@ case "$command" in
     ;;
   "create-release")
     # Create a release for the specified project
-    /octo/octo "create-release --project '$project' --version '$version' --server '$octopusserverurl' --apiKey '$octopusapikey' --space '$spaceName'"
+    /octo/octo create-release --project "$project" --version "$version" --server "$octopusserverurl" --apiKey "$octopusapikey" --space "$spaceName"
     ;;
-  "deploy-release")
-    # Deploy a release
+  "build-information")
+    # Build JSON
+    jsonBody=$(jq -n \
+      --arg buildnumber "$GITHUB_RUN_NUMBER" \
+      --arg buildurl "https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+      --arg vcscommitnumber "$GITHUB_SHA" \
+      --arg vcsroot "https://github.com/$GITHUB_REPOSITORY.git" \
+      --arg commitid "$GITHUB_SHA" \
+      'BuildEnvironment: "GitHub Actions", BuildNumber: $buildNumber, BuildUrl: $buildurl, VcsCommitNumber: $vcscommitnumber, VcsType: "Git", VcsRoot: $vcsroot')
+    echo "It is $jsonBody"
     ;;
 esac
