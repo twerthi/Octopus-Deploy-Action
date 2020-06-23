@@ -51,7 +51,7 @@ case "$command" in
     ;;
   "push")
     # Get file(s) specified
-    packageFiles=$(ls $packageid)
+    packageFiles=$(ls "$artifactfolder/$packageid")
 
     # Check to see if space was specified
     if [ -z "$spaceName" ]
