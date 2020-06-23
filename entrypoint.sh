@@ -60,9 +60,9 @@ case "$command" in
     fi
 
     # Loop through files
-    for file in "$artifactfolder/$packageid"
+    for file in $artifactfolder/$packageid
     do
-      /octo/octo push --id "$file" --server "$octopusserverurl" --apiKey "$octopusapikey" --space "$spaceName"
+      /octo/octo push --package "$file" --server "$octopusserverurl" --apiKey "$octopusapikey" --space "$spaceName"
     done
     ;;
 esac
