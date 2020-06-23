@@ -23,7 +23,7 @@ inputs:
         description: 'Folder that contains the files to pack.'
         required: false
     pack-format:
-        description: 'Format to pack the application in, valid values are Zip or Nupkg.'
+        description: 'Format to pack the application in, valid values are Zip or Nupkg.' 
         required: false
     artifact-folder:
         description: 'Folder to pack artifacts to or push artifacts from.'
