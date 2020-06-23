@@ -2,22 +2,31 @@ name: 'Octopus Deploy CLI'
 description: 'GitHub Action using the Octopus Deploy CLI'
 inputs:
     command:
-        description: 'Which Octopus CLI command to run'
+        description: 'Which Octopus CLI command to run.'
         required: true
     version:
-        description: 'Version number of the package to work with'
+        description: 'Version number of the package to work with.'
         required: false
     package-id:
-        description: 'ID of the package to work with'
+        description: 'ID of the package to work with.'
         required: false
     octopus-server-url:
-        description: 'Url of your Octopus Deploy Server'
+        description: 'Url of your Octopus Deploy Server.'
         required: false
     octopus-apikey:
-        description: 'API key for Octopus Deploy'
+        description: 'API key for Octopus Deploy.'
         required: false
     space:
         description: 'Name of the space to push to.'
+        required: false
+    pack-folder:
+        description: 'Folder that contains the files to pack.'
+        required: false
+    pack-format:
+        description: 'Format to pack the application in, valid values are Zip or Nupkg.'
+        required: false
+    artifact-folder:
+        description: 'Folder to pack artifacts to or push artifacts from.'
         required: false
 runs:
     using: 'docker'
@@ -27,3 +36,6 @@ runs:
         - "version=${{ inputs.version }}"
         - "package-id=${{ inputs.package-id }}"
         - "octopus-server-url=${{ inputs.octopus-server-url }}"
+        - "pack-folder=${{ inputs.pack-folder }}"
+        - "artifact-folder=${{ inputs.artifact-folder }}"
+        - "pack-format=${{ inputs.pack-format }}"

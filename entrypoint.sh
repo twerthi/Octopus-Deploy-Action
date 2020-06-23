@@ -27,13 +27,32 @@ do
       "space")
         spaceName=${argument[1]}
         ;;
+      "pack-folder")
+        packfolder=${argument[1]}
+        ;;
+      "pack-format")
+        packformat=${argument[1]}
+        ;;
+      "artifact-folder")
+        artifactfolder=${argument[1]}
+        ;;
     esac
-
 done
 
-echo "Command is: $command "
-echo "Workdir is $GITHUB_WORKSPACE"
-for entry in "/"
-do
-  echo "It is $entry"
-done
+# Execute the selected command
+case "$command" in
+  "pack")
+    # Check to see if packformat is emtpy
+    if [ -z "$packformat"]
+    then
+      packformat="Zip"
+    fi
+    /octo/octo --id "$packageid" --format "$packformat" --version "$version" --basePath "$packfolder" --outFolder "$artifactfolder"
+    ;;
+  "push")
+    ;;
+esac
+
+#echo "Workdir is $GITHUB_WORKSPACE"
+
+#echo "$(/octo/octo version)"
