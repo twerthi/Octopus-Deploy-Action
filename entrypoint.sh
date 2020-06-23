@@ -47,7 +47,7 @@ case "$command" in
     then
       packformat="Zip"
     fi
-    /octo/octo --id "$packageid" --format "$packformat" --version "$version" --basePath "$packfolder" --outFolder "$artifactfolder"
+    /octo/octo pack --id "$packageid" --format "$packformat" --version "$version" --basePath "$packfolder" --outFolder "$artifactfolder"
     ;;
   "push")
     ;;
