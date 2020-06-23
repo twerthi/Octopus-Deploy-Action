@@ -11,7 +11,7 @@ RUN ["chmod", "+x", "/entrypoint.sh"]
 RUN apk add --no-cache bash
 
 # Add jq to container
-RUN apt install jq -y
+RUN apk add --no-cache jq
 
 # Execute the script
 ENTRYPOINT [ "/entrypoint.sh" ]
