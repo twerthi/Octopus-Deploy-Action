@@ -36,8 +36,17 @@ do
       "artifact-folder")
         artifactfolder=${argument[1]}
         ;;
+      "project")
+        project=${argument[1]}
+        ;;
     esac
 done
+
+# Check to see if space was specified
+if [ -z "$spaceName" ]
+then
+  spaceName="Default"
+fi
 
 # Execute the selected command
 case "$command" in
@@ -50,23 +59,14 @@ case "$command" in
     /octo/octo pack --id "$packageid" --format "$packformat" --version "$version" --basePath "$packfolder" --outFolder "$artifactfolder"
     ;;
   "push")
-    # Get file(s) specified
-    #packageFiles=$(ls "$artifactfolder/$packageid")
-
-    # Check to see if space was specified
-    if [ -z "$spaceName" ]
-    then
-      spaceName="Default"
-    fi
-
     # Loop through files
     for file in $artifactfolder/$packageid
     do
       /octo/octo push --package "$file" --server "$octopusserverurl" --apiKey "$octopusapikey" --space "$spaceName"
     done
     ;;
+  "create-release")
+    # Create a release for the specified project
+    /octo/octo create-release --project "$project" --version "$version" --server "$octopusserverurl" --apiKey "$octopusapikey" --space "$spaceName"
+    ;;
 esac
-
-#echo "Workdir is $GITHUB_WORKSPACE"
-
-#echo "$(/octo/octo version)"

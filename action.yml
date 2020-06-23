@@ -28,6 +28,9 @@ inputs:
     artifact-folder:
         description: 'Folder to pack artifacts to or push artifacts from.'
         required: false
+    project:
+        description: 'Name of the project to create a release or start a deployment.'
+        required: false
 runs:
     using: 'docker'
     image: 'dockerfile'
@@ -41,3 +44,4 @@ runs:
         - "artifact-folder=${{ inputs.artifact-folder }}"
         - "pack-format=${{ inputs.pack-format }}"
         - "space=${{ inputs.space }}" 
+        - "project=${{ inputs.project }}"
