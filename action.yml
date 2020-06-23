@@ -40,4 +40,4 @@ runs:
         - "pack-folder=${{ inputs.pack-folder }}"
         - "artifact-folder=${{ inputs.artifact-folder }}"
         - "pack-format=${{ inputs.pack-format }}"
-        - "space=${{ inputs.space }}"
+        - "space=${{ inputs.space }}" 
