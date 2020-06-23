@@ -8,7 +8,7 @@ inputs:
         description: 'Version number of the package to work with.'
         required: false
     package-id:
-        description: 'ID of the package to work with.'
+        description: 'ID of the package to work with.' 
         required: false
     octopus-server-url:
         description: 'Url of your Octopus Deploy Server.'
