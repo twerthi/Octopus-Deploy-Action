@@ -36,6 +36,7 @@ runs:
         - "version=${{ inputs.version }}"
         - "package-id=${{ inputs.package-id }}"
         - "octopus-server-url=${{ inputs.octopus-server-url }}"
+        - "octopus-apikey=${{ inputs.octopus-apikey }}"
         - "pack-folder=${{ inputs.pack-folder }}"
         - "artifact-folder=${{ inputs.artifact-folder }}"
         - "pack-format=${{ inputs.pack-format }}"
