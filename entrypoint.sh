@@ -78,7 +78,7 @@ case "$command" in
       --arg vcsroot "https://github.com/$GITHUB_REPOSITORY.git" \
       --arg commitid "$GITHUB_SHA" \
       --arg linkurl "https://github.com/$GITHUB_REPOSITORY/commits/$GITHUB_SHA" \
-      '{BuildNumber: $buildnumber, BuildUrl: $buildurl, VcsCommitNumber: $vcscommitnumber, VcsRoot: $vcsroot, Commits: [ {Id: $commitid, LinkUrl: $linkurl} ]}') 
+      '{BuildEnvironment: "GitHub Actions", BuildNumber: $buildnumber, BuildUrl: $buildurl, VcsCommitNumber: $vcscommitnumber, VcsRoot: $vcsroot, Commits: [ {Id: $commitid, LinkUrl: $linkurl} ]}') 
     echo "It is $jsonBody"
     ;;
 esac
